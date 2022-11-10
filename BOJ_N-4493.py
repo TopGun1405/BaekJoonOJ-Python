@@ -1,0 +1,20 @@
+def main():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        p1, p2 = 0, 0
+        for _ in range(n):
+            a, b = input().split()
+            if a == b:
+                continue
+            elif (a == 'R' and b == 'S') or (a == 'P' and b == 'R') or (a == 'S' and b == 'P'):
+                p1 += 1
+            else:
+                p2 += 1
+        print("Player 1" if p1 > p2
+              else ("Player 2" if p1 < p2
+                    else "TIE"))
+
+
+if __name__ == "__main__":
+    main()
