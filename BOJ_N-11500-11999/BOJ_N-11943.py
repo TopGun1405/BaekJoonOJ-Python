@@ -1,6 +1,7 @@
 def main():
     A, B = map(int, input().split())
-    print(A - B)
+    C, D = map(int, input().split())
+    print(A + D if A + D < B + C else B + C)
 
 
 if __name__ == "__main__":
