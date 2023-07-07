@@ -6,6 +6,7 @@ def main():
         for Ai, Aj in zip(A[:-1], A[1:]):
             B.append(Aj - Ai)
         A = B
+        # A = [Aj - Ai for Ai, Aj in zip(A[:-1], A[1:])]
     print(','.join(map(str, A)))
 
 
