@@ -1,6 +1,7 @@
 def main():
     N, K = map(int, input().split())
     G = list(map(int, input().split()))
+
     D = []
     for Gi in G:
         P = Gi * 100 // N
@@ -22,6 +23,7 @@ def main():
             D.append(8)
         elif 96 < P <= 100:
             D.append(9)
+
     print(*D)
 
 
