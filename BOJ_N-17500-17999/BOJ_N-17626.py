@@ -1,19 +1,16 @@
 def main():
     n = int(input())
-    print((11339 - 105 ** 2) ** 0.5)
-    i = 0
-    while True:
-        temp = n
-        nums = []
-        trial = i
-        for _ in range(4):
-            nums.append(int(temp ** 0.5) - trial)
-            temp -= nums[-1] ** 2
-            trial += 1
-            print(nums, temp)
-        i += 1
-        if temp == 0:
-            break
+    squares = [0] + [50_001 for _ in range(n)]
+
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            k = j ** 2
+            if k > i:
+                break
+            squares[i] = min(squares[i], squares[i-k] + 1)
+
+    # print(squares)
+    print(squares[n])
 
 
 if __name__ == "__main__":
