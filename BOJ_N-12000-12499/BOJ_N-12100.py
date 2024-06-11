@@ -7,19 +7,18 @@ def main():
                 if board[r][c] == 0:
                     continue
 
-                current = board[r][c]
-                board[r][c] = 0
-
+                current_block = board[r][c]
                 if board[cursor][c] == 0:
-                    board[cursor][c] = current
+                    board[cursor][c] = current_block
 
-                elif board[cursor][c] == current:
+                elif board[cursor][c] == current_block:
                     board[cursor][c] *= 2
                     cursor += 1
 
                 else:
                     cursor += 1
-                    board[cursor][c] = current
+                    board[cursor][c] = current_block
+                board[r][c] = 0
 
         return board
 
@@ -30,19 +29,18 @@ def main():
                 if board[r][c] == 0:
                     continue
 
-                current = board[r][c]
-                board[r][c] = 0
-
+                current_block = board[r][c]
                 if board[cursor][c] == 0:
-                    board[cursor][c] = current
+                    board[cursor][c] = current_block
 
-                elif board[cursor][c] == current:
+                elif board[cursor][c] == current_block:
                     board[cursor][c] *= 2
                     cursor -= 1
 
                 else:
                     cursor -= 1
-                    board[cursor][c] = current
+                    board[cursor][c] = current_block
+                board[r][c] = 0
 
         return board
 
@@ -53,19 +51,18 @@ def main():
                 if board[r][c] == 0:
                     continue
 
-                current = board[r][c]
-                board[r][c] = 0
-
+                current_block = board[r][c]
                 if board[r][cursor] == 0:
-                    board[r][cursor] = current
+                    board[r][cursor] = current_block
 
-                elif board[r][cursor] == current:
+                elif board[r][cursor] == current_block:
                     board[r][cursor] *= 2
                     cursor += 1
 
                 else:
                     cursor += 1
-                    board[r][cursor] = current
+                    board[r][cursor] = current_block
+                board[r][c] = 0
 
         return board
 
@@ -76,19 +73,18 @@ def main():
                 if board[r][c] == 0:
                     continue
 
-                current = board[r][c]
-                board[r][c] = 0
-
+                current_block = board[r][c]
                 if board[r][cursor] == 0:
-                    board[r][cursor] = current
+                    board[r][cursor] = current_block
 
-                elif board[r][cursor] == current:
+                elif board[r][cursor] == current_block:
                     board[r][cursor] *= 2
                     cursor -= 1
 
                 else:
                     cursor -= 1
-                    board[r][cursor] = current
+                    board[r][cursor] = current_block
+                board[r][c] = 0
 
         return board
 
