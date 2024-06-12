@@ -1,23 +1,23 @@
 def main():
 
-    def NandM():
-        if len(nums) == M:
-            print(*nums)
+    def dfs(n, m):
+        # #########
+        if len(t) == m:
+            print(*t)
             return
-
-        latest = 0
+        seq = 0
         for i in range(N):
-            if latest != A[i]:
-                latest = A[i]
-                nums.append(A[i])
-                NandM()
-                nums.pop()
+            if (t and nums[i] < t[-1]) or seq == nums[i]:
+                continue
+            t.append(nums[i])
+            seq = nums[i]
+            dfs(n, m)
+            t.pop()
 
     N, M = map(int, input().split())
-    A = sorted(map(int, input().split()))
-
-    nums = []
-    NandM()
+    nums = sorted(map(int, input().split()))
+    t = []
+    dfs(N, M)
 
 
 if __name__ == "__main__":
