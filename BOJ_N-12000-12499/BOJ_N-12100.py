@@ -8,6 +8,8 @@ def main():
                     continue
 
                 current_block = board[r][c]
+                board[r][c] = 0
+
                 if board[cursor][c] == 0:
                     board[cursor][c] = current_block
 
@@ -18,7 +20,6 @@ def main():
                 else:
                     cursor += 1
                     board[cursor][c] = current_block
-                board[r][c] = 0
 
         return board
 
@@ -30,6 +31,8 @@ def main():
                     continue
 
                 current_block = board[r][c]
+                board[r][c] = 0
+
                 if board[cursor][c] == 0:
                     board[cursor][c] = current_block
 
@@ -40,7 +43,6 @@ def main():
                 else:
                     cursor -= 1
                     board[cursor][c] = current_block
-                board[r][c] = 0
 
         return board
 
@@ -52,6 +54,8 @@ def main():
                     continue
 
                 current_block = board[r][c]
+                board[r][c] = 0
+
                 if board[r][cursor] == 0:
                     board[r][cursor] = current_block
 
@@ -62,7 +66,6 @@ def main():
                 else:
                     cursor += 1
                     board[r][cursor] = current_block
-                board[r][c] = 0
 
         return board
 
@@ -74,6 +77,8 @@ def main():
                     continue
 
                 current_block = board[r][c]
+                board[r][c] = 0
+
                 if board[r][cursor] == 0:
                     board[r][cursor] = current_block
 
@@ -84,7 +89,6 @@ def main():
                 else:
                     cursor -= 1
                     board[r][cursor] = current_block
-                board[r][c] = 0
 
         return board
 
