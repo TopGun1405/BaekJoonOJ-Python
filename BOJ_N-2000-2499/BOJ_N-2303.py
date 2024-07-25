@@ -1,10 +1,16 @@
+from itertools import combinations
+
+
 def main():
     N = int(input())
-    o = []
+
+    cards = []
     for i in range(N):
-        o.append([i + 1, sum(sorted(map(int, input().split()))[:-3]) % 10])
-    o.sort(key=lambda k: k[1])
-    print(o[0])
+        card = list(map(int, input().split()))
+        cards.append([i + 1, max([sum(case) % 10 for case in combinations(card, 3)])])
+    cards.sort(key=lambda k: (k[1], k[0]), reverse=True)
+
+    print(cards[0][0])
 
 
 if __name__ == "__main__":
