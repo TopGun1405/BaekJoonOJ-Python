@@ -1,13 +1,22 @@
 def main():
     N, M = map(int, input().split())
-    limit = [list(map(int, input().split())) for _ in range(N)]
-    jung_v = [list(map(int, input().split())) for _ in range(M)]
-    i, j, m = 0, 0, 0
-    while i < N and j < M:
-        if v > limit[i][1] and v - limit[i][1] > m:
-            m = v - limit[i][1]
-        if limit[i][0] == 0 and i < N:
-            i += 1
+    limit = []
+    for _ in range(N):
+        s, v = map(int, input().split())
+        for _ in range(s):
+            limit.append(v)
+
+    yj = []
+    for _ in range(M):
+        s, v = map(int, input().split())
+        for _ in range(s):
+            yj.append(v)
+
+    maxV = 0
+    for i in range(100):
+        maxV = max(maxV, yj[i] - limit[i])
+
+    print(maxV)
 
 
 if __name__ == "__main__":
