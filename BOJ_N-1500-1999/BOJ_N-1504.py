@@ -24,20 +24,17 @@ def main() -> None:
         return distance
 
     N, E = map(int, input().split())
-    graph = {n: [] for n in range(1, N + 1)}
+    graph = [[] for _ in range(N+1)]
     for _ in range(E):
         a, b, c = map(int, input().split())
         graph[a].append([b, c])
         graph[b].append([a, c])
     v1, v2 = map(int, input().split())
 
-    res, minDis = dijkstra(1), INF
-    for i in range(1, N + 1):
-        if v1 in graph[i] and v2 in graph[i]:
-            minDis = min(minDis, res[i])
-        else:
-            continue
-    print(minDis)
+    res = [dijkstra(1), dijkstra(v1), dijkstra(v2)]
+    d1 = res[0][v1] + res[1][v2] + res[2][N]
+    d2 = res[0][v2] + res[2][v1] + res[1][N]
+    print(min(d1, d2) if min(d1, d2) < INF else -1)
 
 
 if __name__ == "__main__":
