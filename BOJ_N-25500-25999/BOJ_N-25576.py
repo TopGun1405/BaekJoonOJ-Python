@@ -1,13 +1,13 @@
 def main():
     N, M = map(int, input().split())
     L = list(map(int, input().split()))
-    K = [list(map(int, input().split())) for _ in range(N-1)]
 
     cnt = 0
-    for i in range(N-1):
+    for _ in range(N-1):
+        K_i = list(map(int, input().split()))
         tot = 0
         for j in range(M):
-            tot += abs(L[j] - K[i][j])
+            tot += abs(L[j] - K_i[j])
         if tot > 2_000:
             cnt += 1
 
