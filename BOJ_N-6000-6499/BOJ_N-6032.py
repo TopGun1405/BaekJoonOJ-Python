@@ -1,5 +1,6 @@
 def main():
     N = int(input())
+    
     HFM = []
     for i in range(1, N+1):
         J_i, P_i = map(int, input().split())
