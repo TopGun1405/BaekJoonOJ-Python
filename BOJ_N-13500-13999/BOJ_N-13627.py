@@ -2,7 +2,7 @@ def main():
     N, R = map(int, input().split())
     returned = set(map(int, input().split()))
 
-    volunteers = set(range(1, N+1))
+    volunteers = set(range(1, N + 1))
     missing = sorted(volunteers - returned)
 
     if not missing:
