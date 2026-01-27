@@ -7,7 +7,6 @@ def main():
             subs.append(S[i:j])
     subs = sorted(set(subs), reverse=True)
 
-    print(subs)
     print(subs[0])
 
 
