@@ -4,8 +4,7 @@ def main():
         M = int(input())
 
         t = 12 * (M // 50) + 6
-        HH = 6 + t // 60
-        MM = t % 60
+        HH, MM = 6 + t // 60, t % 60
 
         if HH >= 24:
             print(-1)
