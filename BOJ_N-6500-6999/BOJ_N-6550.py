@@ -3,8 +3,20 @@ def main():
         try:
             s, t = map(list, input().split())
 
-            print("Yes" if s in t else "No")
-        except:
+            i, sub = 0, False
+            for c in t:
+                if s[i] == c:
+                    i += 1
+                    if i == len(s):
+                        sub = True
+                        break
+
+            if sub:
+                print("Yes")
+            else:
+                print("No")
+
+        except EOFError:
             break
 
 
