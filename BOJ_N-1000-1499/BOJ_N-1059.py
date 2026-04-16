@@ -6,7 +6,7 @@ def main():
     if n in S:
         print(0)
     else:
-        minN, maxN = 1, 0
+        minN, maxN = 0, 0
         for S_i in S:
             if S_i < n:
                 minN = S_i
